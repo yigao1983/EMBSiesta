@@ -1,0 +1,1249 @@
+Siesta Version: siesta-3.2
+Architecture  : SIESTA_ARCH
+Compiler flags: FFLAGS
+PARALLEL version
+NetCDF support
+
+* Running on    4 nodes in parallel
+>> Start of run:  22-MAR-2013  17:25:29
+
+                           ***********************       
+                           *  WELCOME TO SIESTA  *       
+                           ***********************       
+
+reinit: Reading from standard input
+************************** Dump of input data file ****************************
+SystemName          Oxypartial
+SystemLabel         oxypartial
+NumberOfAtoms       2
+NumberOfSpecies     1
+MeshCutoff 200 Ry
+%block ChemicalSpeciesLabel
+ 1  201  O-Fraction-0.50000      # Species index, atomic number, species label
+%endblock ChemicalSpeciesLabel
+%block SyntheticAtoms
+ 1
+ 2 2 3 4
+ 1.0 2.0 0.0 0.0
+%endblock SyntheticAtoms
+%block PAO.basis
+O-Fraction-0.50000  2                 # Species label, number of l-shells
+ n=2   0   2                         # n, l, Nzeta
+ 0.0 0.0
+   1.000      1.000
+ n=2   1   2 P   1                   # n, l, Nzeta, Polarization, NzetaPol
+   4.139      2.740
+   1.000      1.000
+%endblock PAO.Basis
+DM.NumberPulay 4
+Spin.Polarized T
+AtomicCoordinatesFormat  Ang
+%block AtomicCoordinatesAndAtomicSpecies
+ 0.000  0.000  0.000  1
+ 0.000  0.000  1.200  1
+%endblock AtomicCoordinatesAndAtomicSpecies
+MD.TypeOfRun Broyden
+MD.NumCGSteps 40
+************************** End of input data file *****************************
+
+reinit: -----------------------------------------------------------------------
+reinit: System Name: Oxypartial
+reinit: -----------------------------------------------------------------------
+reinit: System Label: oxypartial                                                  
+reinit: -----------------------------------------------------------------------
+
+initatom: Reading input for the pseudopotentials and atomic orbitals ----------
+ Species number:            1  Label: O-Fraction-0.50000 Atomic number:         201
+Reading pseudopotential information in formatted form from O-Fraction-0.50000.psf
+
+Valence configuration for pseudopotential generation:
+Ground state valence configuration (synthetic):   2s 1.00000  2p 2.00000
+Number of synthetic species:  1
+For O-Fraction-0.50000, standard SIESTA heuristics set lmxkb to 3
+ (one more than the basis l, including polarization orbitals).
+Use PS.lmax or PS.KBprojectors blocks to override.
+
+<basis_specs>
+===============================================================================
+O-Fraction-0.50000   Z= 201    Mass= -1.0000        Charge= 0.17977+309
+Lmxo=1 Lmxkb= 3    BasisType=split      Semic=F
+L=0  Nsemic=0  Cnfigmx=2
+          n=1  nzeta=2  polorb=0
+            splnorm:   0.15000    
+               vcte:    0.0000    
+               rinn:    0.0000    
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+L=1  Nsemic=0  Cnfigmx=2
+          n=1  nzeta=2  polorb=1
+            splnorm:   0.15000    
+               vcte:    0.0000    
+               rinn:    0.0000    
+                rcs:    4.1390      2.7400    
+            lambdas:    1.0000      1.0000    
+-------------------------------------------------------------------------------
+L=0  Nkbl=1  erefs: 0.17977+309
+L=1  Nkbl=1  erefs: 0.17977+309
+L=2  Nkbl=1  erefs: 0.17977+309
+L=3  Nkbl=1  erefs: 0.17977+309
+===============================================================================
+</basis_specs>
+
+atom: Called for (synthetic) O-Fraction-0.50000    (Z = 201)
+
+read_vps: Pseudopotential generation method:
+read_vps: FRACT     19-FEB-98  ---       fraction  fraction 
+Total valence charge:    3.00000
+
+xc_check: Exchange-correlation functional:
+xc_check: Ceperley-Alder
+V l=0 = -2*Zval/r beyond r=  1.1278
+V l=1 = -2*Zval/r beyond r=  1.1278
+V l=2 = -2*Zval/r beyond r=  1.1278
+V l=3 = -2*Zval/r beyond r=  1.1138
+All V_l potentials equal beyond r=  1.1278
+This should be close to max(r_c) in ps generation
+All pots = -2*Zval/r beyond r=  1.1278
+
+VLOCAL1: 99.0% of the norm of Vloc inside     34.126 Ry
+VLOCAL1: 99.9% of the norm of Vloc inside     77.774 Ry
+atom: Maximum radius for 4*pi*r*r*local-pseudopot. charge    1.36047
+atom: Maximum radius for r*vlocal+2*Zval:    1.15638
+GHOST: No ghost state for L =  0
+GHOST: No ghost state for L =  1
+GHOST: No ghost state for L =  2
+GHOST: No ghost state for L =  3
+
+KBgen: Kleinman-Bylander projectors: 
+   l= 0   rc=  1.294105   el= -0.693307   Ekb=  4.664913   kbcos=  0.254299
+   l= 1   rc=  1.343567   el=  0.001447   Ekb= -4.466139   kbcos= -0.030125
+   l= 2   rc=  1.466454   el=  0.002386   Ekb= -1.010968   kbcos= -0.001863
+   l= 3   rc=  1.561052   el=  0.003508   Ekb= -0.392253   kbcos= -0.000249
+
+KBgen: Total number of  Kleinman-Bylander projectors:   16
+atom: -------------------------------------------------------------------------
+
+atom: SANKEY-TYPE ORBITALS:
+atom: Selected multiple-zeta basis: split     
+
+SPLIT: Orbitals with angular momentum L= 0
+
+SPLIT: Basis orbitals for state 2s
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.020000 Ry
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    4.243912
+                 energy =   -0.673179
+                kinetic =    0.971847
+    potential(screened) =   -1.645026
+       potential(ionic) =   -4.821659
+
+   izeta = 2
+                 rmatch =    3.388770
+              splitnorm =    0.150000
+                 energy =   -0.526416
+                kinetic =    1.507134
+    potential(screened) =   -2.033550
+       potential(ionic) =   -5.533769
+
+SPLIT: Orbitals with angular momentum L= 1
+
+SPLIT: Basis orbitals for state 2p
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    4.139122
+                 energy =    0.491454
+                kinetic =    1.445506
+    potential(screened) =   -0.954052
+       potential(ionic) =   -3.434023
+
+   izeta = 2
+                 rmatch =    2.774434
+              splitnorm =    0.627770
+                 energy =    1.483725
+                kinetic =    3.945497
+    potential(screened) =   -2.461771
+       potential(ionic) =   -5.835431
+
+POLgen: Perturbative polarization orbital with L=  2
+
+POLgen: Polarization orbital for state 2p
+
+   izeta = 1
+                     rc =    4.139122
+                 energy =    1.585617
+                kinetic =    2.166931
+    potential(screened) =   -0.581314
+       potential(ionic) =   -2.778294
+atom: Total number of Sankey-type orbitals: 13
+
+atm_pop: Valence configuration (for local Pseudopot. screening):
+ 2s( 1.00)                                                            
+ 2p( 2.00)                                                            
+Vna: chval, zval:    3.00000   3.00000
+
+Vna:  Cut-off radius for the neutral-atom potential:   4.243912
+
+atom: _________________________________________________________________________
+
+prinput: Basis input ----------------------------------------------------------
+
+PAO.BasisType split     
+
+%block ChemicalSpeciesLabel
+    1  201 O-Fraction-0.50000      # Species index, atomic number, species label
+%endblock ChemicalSpeciesLabel
+
+%block SyntheticAtoms   # Valence config
+  1
+  2  2  3  4
+  1.00000  2.00000  0.00000  0.00000
+%endblock SyntheticAtoms
+
+%block PAO.Basis                 # Define Basis set
+O-Fraction-0.50000    2                    # Species label, number of l-shells
+ n=2   0   2                         # n, l, Nzeta 
+   4.244      3.389   
+   1.000      1.000   
+ n=2   1   2 P   1                   # n, l, Nzeta, Polarization, NzetaPol
+   4.139      2.774   
+   1.000      1.000   
+%endblock PAO.Basis
+
+prinput: ----------------------------------------------------------------------
+
+Dumping basis to NetCDF file O-Fraction-0.50000.ion.nc
+coor:   Atomic-coordinates input format  =     Cartesian coordinates
+coor:                                          (in Angstroms)
+
+siesta: Atomic coordinates (Bohr) and species
+siesta:      0.00000   0.00000   0.00000  1        1
+siesta:      0.00000   0.00000   2.26767  1        2
+
+siesta: Automatic unit cell vectors (Ang):
+siesta:    4.940717    0.000000    0.000000
+siesta:    0.000000    4.940717    0.000000
+siesta:    0.000000    0.000000    6.260717
+
+siesta: System type = molecule  
+
+initatomlists: Number of atoms, orbitals, and projectors:      2    26    32
+
+siesta: ******************** Simulation parameters ****************************
+siesta:
+siesta: The following are some of the parameters of the simulation.
+siesta: A complete list of the parameters used, including default values,
+siesta: can be found in file out.fdf
+siesta:
+redata: Non-Collinear-spin run           =     F
+redata: SpinPolarized (Up/Down) run      =     T
+redata: Number of spin components        =     2
+redata: Long output                      =     F
+redata: Number of Atomic Species         =        1
+redata: Charge density info will appear in .RHO file
+redata: Write Mulliken Pop.              =     NO
+redata: Mesh Cutoff                      =   200.0000  Ry
+redata: Net charge of the system         =     0.0000 |e|
+redata: Max. number of SCF Iter          =       50
+redata: Performing Pulay mixing using    =     4 iterations
+redata: Mix DM in first SCF step ?       =     F
+redata: Mix after SCF convergence?       =     T
+redata: Write Pulay info on disk?        =     F
+redata: Discard 1st Pulay DM after  kick =     F
+redata: New DM Mixing Weight             =     0.2500
+redata: New DM Occupancy tolerance       = 0.000000000001
+redata: No kicks to SCF
+redata: DM Mixing Weight for Kicks       =     0.5000
+redata: DM Tolerance for SCF             =     0.000100
+redata: Require Energy convergence for SCF =     F
+redata: DM Energy tolerance for SCF      =     0.000100 eV
+redata: Require Harris convergence for SCF =     F
+redata: DM Harris energy tolerance for SCF =     0.000100 eV
+redata: Antiferro initial spin density   =     F
+redata: Using Saved Data (generic)   =     F
+redata: Use continuation files for DM    =     F
+redata: Neglect nonoverlap interactions  =     F
+redata: Method of Calculation            =     Diagonalization
+redata: Divide and Conquer               =     T
+redata: Electronic Temperature           =     0.0019  Ry
+redata: Fix the spin of the system       =     F
+redata: Dynamics option                  =     Broyden coord. optimization
+redata: Variable cell                    =     F
+redata: Maximum number of CG moves       =       40
+redata: Force tolerance                  =     0.0016  Ry/Bohr
+redata: ***********************************************************************
+Total number of electrons:     6.000000
+Total ionic charge:     6.000000
+
+* ProcessorY, Blocksize:    2   7
+
+ Kpoints in:            1 . Kpoints trimmed:            1
+
+siesta: k-grid: Number of k-points =     1
+siesta: k-grid: Cutoff (effective) =     2.470 Ang
+siesta: k-grid: Supercell and displacements
+siesta: k-grid:    1   0   0      0.000
+siesta: k-grid:    0   1   0      0.000
+siesta: k-grid:    0   0   1      0.000
+
+* Maximum dynamic memory allocated =     1 MB
+
+siesta:                 ==============================
+                            Begin CG move =      0
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+New_DM. Step:     1
+Initializing Density Matrix...
+
+initdm: Initial spin polarization (Qup-Qdown) =    6.000001
+
+InitMesh: MESH =    48 x    48 x    54 =      124416
+InitMesh: Mesh cutoff (required, used) =   200.000   205.608 Ry
+
+* Maximum dynamic memory allocated =     5 MB
+
+stepf: Fermi-Dirac step function
+
+siesta: Program's energy decomposition (eV):
+siesta: Ebs     =       -95.102911
+siesta: Eions   =       388.219918
+siesta: Ena     =       177.988389
+siesta: Ekin    =       105.068031
+siesta: Enl     =         7.661400
+siesta: DEna    =         0.000010
+siesta: DUscf   =         0.000000
+siesta: DUext   =         0.000000
+siesta: Exc     =       -58.957041
+siesta: eta*DQ  =         0.000000
+siesta: Emadel  =         0.000000
+siesta: Emeta   =         0.000000
+siesta: Emolmec =         0.000000
+siesta: Ekinion =         0.000000
+siesta: Eharris =      -176.604228
+siesta: Etot    =      -156.459129
+siesta: FreeEng =      -156.459129
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -176.6042     -156.4591     -156.4591  0.7393 -5.8452
+timer: Routine,Calls,Time,% = IterSCF        1       2.946  69.33
+elaps: Routine,Calls,Wall,% = IterSCF        1       0.738  67.77
+siesta:    2     -184.4812     -181.9725     -181.9725  0.3029  1.5156
+siesta:    3     -183.6642     -178.5209     -178.5209  0.1176 -0.0604
+siesta:    4     -183.7371     -181.9564     -181.9564  0.0606 -0.0357
+siesta:    5     -183.7515     -183.5614     -183.5614  0.0131 -0.2120
+siesta:    6     -183.7495     -183.7244     -183.7244  0.0027 -0.1010
+siesta:    7     -183.7495     -183.7551     -183.7551  0.0011 -0.0908
+siesta:    8     -183.7495     -183.7618     -183.7618  0.0004 -0.0944
+siesta:    9     -183.7495     -183.7549     -183.7549  0.0002 -0.0955
+siesta:   10     -183.7495     -183.7487     -183.7487  0.0001 -0.0967
+siesta:   11     -183.7495     -183.7498     -183.7498  0.0000 -0.0974
+
+siesta: E_KS(eV) =             -183.7497
+
+siesta: E_KS - E_eggbox =      -183.7497
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000   -0.000000    0.012327
+----------------------------------------
+   Max   14.370657
+   Res    8.293345    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max   14.370657    constrained
+
+Stress-tensor-Voigt (kbar):       -0.11       -0.11     -180.66        0.00       -0.00       -0.00
+(Free)E + p*V (eV/cell)     -177.9986
+Target enthalpy (eV/cell)     -183.7497
+
+Broyden_optim: max_history for broyden:   5
+Broyden_optim: cycle on maxit: T
+Broyden_optim: initial inverse jacobian:   1.0000
+
+Broyden_optim: No of elements:      6
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =      1
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:     2
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+Density Matrix sparsity pattern changed.
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.8724     -187.5543     -187.5543  0.2969  1.0346
+siesta:    2     -185.7439     -185.4280     -185.4286  0.2590  0.6649
+siesta:    3     -185.5771     -186.4227     -186.4605  0.1273  0.7770
+siesta:    4     -185.6024     -185.5813     -185.6121  0.1752  0.6104
+siesta:    5     -185.5706     -185.5517     -185.5965  0.0421  0.5908
+siesta:    6     -185.5714     -185.5634     -185.6126  0.0544  0.6154
+siesta:    7     -185.5730     -185.5701     -185.6194  0.0061  0.6300
+siesta:    8     -185.5719     -185.5885     -185.6372  0.0314  0.6428
+siesta:    9     -185.5724     -185.5873     -185.6367  0.0126  0.6447
+siesta:   10     -185.5727     -185.5833     -185.6326  0.0075  0.6510
+siesta:   11     -185.5728     -185.5751     -185.6244  0.0039  0.6557
+siesta:   12     -185.5728     -185.5692     -185.6186  0.0017  0.6610
+siesta:   13     -185.5728     -185.5711     -185.6204  0.0014  0.6689
+siesta:   14     -185.5728     -185.5726     -185.6219  0.0003  0.6666
+siesta:   15     -185.5728     -185.5727     -185.6221  0.0001  0.6671
+
+siesta: E_KS(eV) =             -185.5729
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot   -0.000000   -0.000000   -0.092704
+----------------------------------------
+   Max    0.250556
+   Res    0.120896    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.250556    constrained
+
+Stress-tensor-Voigt (kbar):        0.01        0.01       -3.47       -0.00       -0.00        0.00
+(Free)E + p*V (eV/cell)     -185.5125
+Target enthalpy (eV/cell)     -185.6222
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =      2
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:     3
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.5783     -185.5895     -185.6389  0.0371  0.6812
+siesta:    2     -185.5772     -185.5771     -185.6244  0.0286  0.7083
+siesta:    3     -185.5769     -185.5814     -185.6306  0.0056  0.6963
+siesta:    4     -185.5771     -185.5753     -185.6236  0.0029  0.7046
+siesta:    5     -185.5773     -185.5769     -185.6251  0.0032  0.7014
+siesta:    6     -185.5772     -185.5770     -185.6249  0.0004  0.7022
+siesta:    7     -185.5772     -185.5771     -185.6251  0.0001  0.7024
+
+siesta: E_KS(eV) =             -185.5772
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot   -0.000000    0.000000   -0.114016
+----------------------------------------
+   Max    0.564903
+   Res    0.295075    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.564903    constrained
+
+Stress-tensor-Voigt (kbar):        0.01        0.01       -9.30       -0.00       -0.00        0.00
+(Free)E + p*V (eV/cell)     -185.3301
+Target enthalpy (eV/cell)     -185.6252
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =      3
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+New_DM. Step:     4
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+Density Matrix sparsity pattern changed.
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6835     -185.4490     -185.4971  0.2058  0.6151
+siesta:    2     -185.6843     -185.6604     -185.6656  0.0207  0.5420
+siesta:    3     -185.6804     -185.6554     -185.6682  0.0155  0.5340
+siesta:    4     -185.6861     -185.6888     -185.6987  0.0023  0.5285
+siesta:    5     -185.6855     -185.6838     -185.6880  0.0016  0.5436
+siesta:    6     -185.6856     -185.6857     -185.6902  0.0008  0.5438
+siesta:    7     -185.6856     -185.6859     -185.6903  0.0005  0.5438
+siesta:    8     -185.6856     -185.6856     -185.6900  0.0001  0.5427
+
+siesta: E_KS(eV) =             -185.6856
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000    0.000000    0.028603
+----------------------------------------
+   Max    1.597471
+   Res    0.914081    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    1.597471    constrained
+
+Stress-tensor-Voigt (kbar):       -0.27       -0.27       28.51       -0.00       -0.00        0.00
+(Free)E + p*V (eV/cell)     -186.5790
+Target enthalpy (eV/cell)     -185.6900
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =      4
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+New_DM. Step:     5
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.7116     -185.6403     -185.6447  0.0048  0.5231
+siesta:    2     -185.7118     -185.7115     -185.7136  0.0011  0.5369
+siesta:    3     -185.7118     -185.7086     -185.7104  0.0007  0.5360
+siesta:    4     -185.7118     -185.7120     -185.7138  0.0000  0.5355
+
+siesta: E_KS(eV) =             -185.7120
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000   -0.000000    0.008350
+----------------------------------------
+   Max    1.491906
+   Res    0.858945    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    1.491906    constrained
+
+Stress-tensor-Voigt (kbar):       -0.28       -0.28       26.45       -0.00        0.00       -0.00
+(Free)E + p*V (eV/cell)     -186.5372
+Target enthalpy (eV/cell)     -185.7138
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =      5
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+New_DM. Step:     6
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6753     -185.7756     -185.7774  0.0066  0.5624
+siesta:    2     -185.6743     -185.6752     -185.6805  0.0015  0.5431
+siesta:    3     -185.6743     -185.6767     -185.6830  0.0010  0.5441
+siesta:    4     -185.6743     -185.6732     -185.6794  0.0001  0.5452
+
+siesta: E_KS(eV) =             -185.6733
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000    0.000000    0.026485
+----------------------------------------
+   Max    1.624313
+   Res    0.930183    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    1.624313    constrained
+
+Stress-tensor-Voigt (kbar):       -0.22       -0.22       29.37        0.00       -0.00       -0.00
+(Free)E + p*V (eV/cell)     -186.5992
+Target enthalpy (eV/cell)     -185.6795
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =      6
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+New_DM. Step:     7
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6526     -185.7045     -185.7107  0.0056  0.5589
+siesta:    2     -185.6517     -185.6527     -185.6630  0.0015  0.5498
+siesta:    3     -185.6514     -185.6415     -185.6527  0.0006  0.5484
+siesta:    4     -185.6514     -185.6488     -185.6603  0.0002  0.5507
+siesta:    5     -185.6514     -185.6503     -185.6619  0.0001  0.5507
+
+siesta: E_KS(eV) =             -185.6511
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000    0.000000    0.029496
+----------------------------------------
+   Max    1.599163
+   Res    0.914802    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    1.599163    constrained
+
+Stress-tensor-Voigt (kbar):       -0.24       -0.24       28.85        0.00        0.00       -0.00
+(Free)E + p*V (eV/cell)     -186.5651
+Target enthalpy (eV/cell)     -185.6627
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =      7
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:     8
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+Density Matrix sparsity pattern changed.
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6013     -186.1008     -186.1124  0.2633  0.9133
+siesta:    2     -185.6693     -185.6485     -185.6843  0.0156  1.0380
+siesta:    3     -185.6685     -185.6521     -185.6880  0.0116  1.0452
+siesta:    4     -185.6681     -185.6660     -185.7018  0.0014  1.0566
+siesta:    5     -185.6681     -185.6676     -185.7035  0.0009  1.0508
+siesta:    6     -185.6681     -185.6679     -185.7038  0.0005  1.0495
+siesta:    7     -185.6681     -185.6680     -185.7039  0.0002  1.0498
+siesta:    8     -185.6681     -185.6681     -185.7039  0.0000  1.0505
+
+siesta: E_KS(eV) =             -185.6681
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000    0.000000    0.016537
+----------------------------------------
+   Max    0.302398
+   Res    0.169883    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.302398    constrained
+
+Stress-tensor-Voigt (kbar):       -0.02       -0.02       -1.54        0.00       -0.00        0.00
+(Free)E + p*V (eV/cell)     -185.6541
+Target enthalpy (eV/cell)     -185.7039
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =      8
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:     9
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+Density Matrix sparsity pattern changed.
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6193     -185.5094     -185.5452  0.0330  0.8367
+siesta:    2     -185.6130     -185.6109     -185.6473  0.0072  0.7894
+siesta:    3     -185.6125     -185.6030     -185.6422  0.0033  0.8029
+siesta:    4     -185.6126     -185.6114     -185.6497  0.0011  0.8115
+siesta:    5     -185.6127     -185.6125     -185.6505  0.0006  0.8165
+siesta:    6     -185.6127     -185.6125     -185.6503  0.0002  0.8155
+siesta:    7     -185.6127     -185.6126     -185.6503  0.0000  0.8149
+
+siesta: E_KS(eV) =             -185.6127
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot   -0.000000    0.000000   -0.016157
+----------------------------------------
+   Max    0.888888
+   Res    0.508557    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.888888    constrained
+
+Stress-tensor-Voigt (kbar):       -0.01       -0.01      -15.17        0.00       -0.00       -0.00
+(Free)E + p*V (eV/cell)     -185.1673
+Target enthalpy (eV/cell)     -185.6505
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =      9
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+New_DM. Step:    10
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+Density Matrix sparsity pattern changed.
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6777     -185.4699     -185.5076  0.2606  0.6797
+siesta:    2     -185.6663     -185.6346     -185.6412  0.0276  0.5414
+siesta:    3     -185.6576     -185.6258     -185.6486  0.0190  0.5361
+siesta:    4     -185.6699     -185.6646     -185.6828  0.0053  0.5291
+siesta:    5     -185.6698     -185.6687     -185.6760  0.0037  0.5348
+siesta:    6     -185.6698     -185.6708     -185.6780  0.0010  0.5497
+siesta:    7     -185.6698     -185.6700     -185.6772  0.0006  0.5486
+siesta:    8     -185.6700     -185.6701     -185.6773  0.0001  0.5465
+
+siesta: E_KS(eV) =             -185.6701
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000   -0.000000    0.036575
+----------------------------------------
+   Max    1.620215
+   Res    0.924934    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    1.620215    constrained
+
+Stress-tensor-Voigt (kbar):       -0.22       -0.22       28.94       -0.00        0.00       -0.00
+(Free)E + p*V (eV/cell)     -186.5829
+Target enthalpy (eV/cell)     -185.6771
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =     10
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:    11
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+Density Matrix sparsity pattern changed.
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.5869     -186.0522     -186.0593  0.2659  0.8156
+siesta:    2     -185.6526     -185.6245     -185.6604  0.0184  0.9245
+siesta:    3     -185.6509     -185.6302     -185.6661  0.0137  0.9356
+siesta:    4     -185.6499     -185.6466     -185.6824  0.0018  0.9547
+siesta:    5     -185.6498     -185.6493     -185.6852  0.0010  0.9453
+siesta:    6     -185.6498     -185.6495     -185.6854  0.0006  0.9444
+siesta:    7     -185.6498     -185.6496     -185.6854  0.0002  0.9450
+siesta:    8     -185.6498     -185.6498     -185.6857  0.0001  0.9458
+
+siesta: E_KS(eV) =             -185.6499
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000    0.000000   -0.037804
+----------------------------------------
+   Max    0.570756
+   Res    0.318800    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.570756    constrained
+
+Stress-tensor-Voigt (kbar):        0.01        0.01       -7.79        0.00        0.00        0.00
+(Free)E + p*V (eV/cell)     -185.4382
+Target enthalpy (eV/cell)     -185.6857
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =     11
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:    12
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6613     -185.6943     -185.7301  0.0083  0.9979
+siesta:    2     -185.6611     -185.6608     -185.6966  0.0007  1.0093
+siesta:    3     -185.6610     -185.6624     -185.6982  0.0005  1.0059
+siesta:    4     -185.6610     -185.6608     -185.6967  0.0003  1.0016
+siesta:    5     -185.6610     -185.6610     -185.6968  0.0000  1.0022
+
+siesta: E_KS(eV) =             -185.6610
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot   -0.000000   -0.000000    0.005520
+----------------------------------------
+   Max    0.413874
+   Res    0.237362    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.413874    constrained
+
+Stress-tensor-Voigt (kbar):       -0.01       -0.01       -4.58        0.00       -0.00        0.00
+(Free)E + p*V (eV/cell)     -185.5503
+Target enthalpy (eV/cell)     -185.6968
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =     12
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:    13
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+Density Matrix sparsity pattern changed.
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6323     -185.5677     -185.6035  0.0192  0.8792
+siesta:    2     -185.6307     -185.6294     -185.6653  0.0014  0.8517
+siesta:    3     -185.6304     -185.6272     -185.6634  0.0012  0.8595
+siesta:    4     -185.6303     -185.6303     -185.6664  0.0006  0.8694
+siesta:    5     -185.6303     -185.6302     -185.6662  0.0000  0.8684
+
+siesta: E_KS(eV) =             -185.6302
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000   -0.000001    0.058104
+----------------------------------------
+   Max    0.755489
+   Res    0.419744    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.755489    constrained
+
+Stress-tensor-Voigt (kbar):        0.04        0.04      -11.74        0.00        0.00        0.00
+(Free)E + p*V (eV/cell)     -185.2955
+Target enthalpy (eV/cell)     -185.6663
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =     13
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:    14
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6158     -185.6020     -185.6381  0.0062  0.8276
+siesta:    2     -185.6153     -185.6156     -185.6526  0.0010  0.8178
+siesta:    3     -185.6153     -185.6149     -185.6524  0.0008  0.8201
+siesta:    4     -185.6154     -185.6155     -185.6529  0.0002  0.8224
+siesta:    5     -185.6154     -185.6154     -185.6527  0.0000  0.8224
+
+siesta: E_KS(eV) =             -185.6154
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot   -0.000000   -0.000000   -0.001508
+----------------------------------------
+   Max    0.825300
+   Res    0.476052    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.825300    constrained
+
+Stress-tensor-Voigt (kbar):        0.05        0.05      -12.92        0.00       -0.00       -0.00
+(Free)E + p*V (eV/cell)     -185.2450
+Target enthalpy (eV/cell)     -185.6527
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =     14
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:    15
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+Density Matrix sparsity pattern changed.
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6580     -185.7266     -185.7639  0.0204  0.9619
+siesta:    2     -185.6566     -185.6548     -185.6906  0.0015  0.9931
+siesta:    3     -185.6561     -185.6579     -185.6938  0.0014  0.9846
+siesta:    4     -185.6560     -185.6553     -185.6912  0.0007  0.9738
+siesta:    5     -185.6560     -185.6560     -185.6918  0.0000  0.9752
+
+siesta: E_KS(eV) =             -185.6560
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot   -0.000000    0.000000   -0.000511
+----------------------------------------
+   Max    0.481252
+   Res    0.277704    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.481252    constrained
+
+Stress-tensor-Voigt (kbar):       -0.00       -0.00       -6.31        0.00       -0.00        0.00
+(Free)E + p*V (eV/cell)     -185.4909
+Target enthalpy (eV/cell)     -185.6918
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =     15
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:    16
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6710     -185.7339     -185.7698  0.0137  1.0602
+siesta:    2     -185.6703     -185.6695     -185.7053  0.0012  1.0791
+siesta:    3     -185.6701     -185.6733     -185.7091  0.0008  1.0733
+siesta:    4     -185.6700     -185.6699     -185.7057  0.0005  1.0663
+siesta:    5     -185.6700     -185.6701     -185.7059  0.0000  1.0672
+
+siesta: E_KS(eV) =             -185.6701
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot    0.000000   -0.000001    0.008551
+----------------------------------------
+   Max    0.257938
+   Res    0.146473    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.257938    constrained
+
+Stress-tensor-Voigt (kbar):       -0.03       -0.03       -0.38        0.00        0.00        0.00
+(Free)E + p*V (eV/cell)     -185.6921
+Target enthalpy (eV/cell)     -185.7059
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =     16
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:    17
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6762     -185.7444     -185.7803  0.0115  1.1391
+siesta:    2     -185.6757     -185.6751     -185.7109  0.0012  1.1552
+siesta:    3     -185.6755     -185.6799     -185.7158  0.0007  1.1500
+siesta:    4     -185.6755     -185.6755     -185.7113  0.0004  1.1441
+siesta:    5     -185.6755     -185.6756     -185.7114  0.0000  1.1448
+
+siesta: E_KS(eV) =             -185.6755
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot   -0.000000    0.000000    0.019467
+----------------------------------------
+   Max    0.083737
+   Res    0.043094    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.083737    constrained
+
+Stress-tensor-Voigt (kbar):        0.00        0.00        5.51        0.00        0.00       -0.00
+(Free)E + p*V (eV/cell)     -185.8869
+Target enthalpy (eV/cell)     -185.7114
+Cycling the Broyden process...
+
+* Maximum dynamic memory allocated =     5 MB
+
+siesta:                 ==============================
+                            Begin CG move =     17
+                        ==============================
+
+outcell: Unit cell vectors (Ang):
+        4.940717    0.000000    0.000000
+        0.000000    4.940717    0.000000
+        0.000000    0.000000    6.260717
+
+outcell: Cell vector modules (Ang)   :    4.940717    4.940717    6.260717
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    152.8284
+ Folding of H and S is implicitly performed
+New_DM. Step:    18
+Re-using DM from previous geometry...
+Re-using DM without extrapolation (not allowed)
+
+siesta: iscf   Eharris(eV)      E_KS(eV)   FreeEng(eV)   dDmax  Ef(eV)
+siesta:    1     -185.6762     -185.7118     -185.7477  0.0053  1.1772
+siesta:    2     -185.6761     -185.6760     -185.7118  0.0006  1.1845
+siesta:    3     -185.6761     -185.6786     -185.7145  0.0003  1.1821
+siesta:    4     -185.6761     -185.6761     -185.7120  0.0002  1.1794
+siesta:    5     -185.6761     -185.6761     -185.7119  0.0000  1.1797
+
+siesta: E_KS(eV) =             -185.6761
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot   -0.000000    0.000000   -0.002214
+----------------------------------------
+   Max    0.002499
+   Res    0.001027    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.002499    constrained
+
+Stress-tensor-Voigt (kbar):       -0.03       -0.03        8.39       -0.00       -0.00       -0.00
+(Free)E + p*V (eV/cell)     -185.9767
+Target enthalpy (eV/cell)     -185.7119
+
+* Maximum dynamic memory allocated =     5 MB
+
+outcoor: Relaxed atomic coordinates (Ang):                  
+   -0.00000000    0.00000001   -0.40958870   1       1  O-Fraction-0.50000
+   -0.00000000    0.00000000    1.57154173   1       2  O-Fraction-0.50000
+
+siesta: Program's energy decomposition (eV):
+siesta: Ebs     =       -58.381506
+siesta: Eions   =       388.219918
+siesta: Ena     =       181.263667
+siesta: Ekin    =       103.460060
+siesta: Enl     =        18.726135
+siesta: DEna    =       -48.373621
+siesta: DUscf   =         4.928112
+siesta: DUext   =         0.000000
+siesta: Exc     =       -57.460522
+siesta: eta*DQ  =         0.000000
+siesta: Emadel  =         0.000000
+siesta: Emeta   =         0.000000
+siesta: Emolmec =         0.000000
+siesta: Ekinion =         0.000000
+siesta: Eharris =      -185.676059
+siesta: Etot    =      -185.676086
+siesta: FreeEng =      -185.711923
+
+siesta: Final energy (eV):
+siesta:  Band Struct. =     -58.381506
+siesta:       Kinetic =     103.460060
+siesta:       Hartree =      86.995272
+siesta:    Ext. field =       0.000000
+siesta:   Exch.-corr. =     -57.460522
+siesta:  Ion-electron =    -260.711167
+siesta:       Ion-ion =     -57.959729
+siesta:       Ekinion =       0.000000
+siesta:         Total =    -185.676086
+
+siesta: Stress tensor (static) (eV/Ang**3):
+siesta:    -0.000019   -0.000000   -0.000000
+siesta:    -0.000000   -0.000019   -0.000000
+siesta:    -0.000000   -0.000000    0.005235
+
+siesta: Cell volume =        152.828404 Ang**3
+
+siesta: Pressure (static):
+siesta:                Solid            Molecule  Units
+siesta:          -0.00001887         -0.00001893  Ry/Bohr**3
+siesta:          -0.00173228         -0.00173830  eV/Ang**3
+siesta:          -2.77545530         -2.78509174  kBar
+(Free)E+ p_basis*V_orbitals  =        -185.280291
+(Free)Eharris+ p_basis*V_orbitals  =        -185.280257
+
+siesta: Total spin polarization (Qup-Qdown) =    1.999998
+
+siesta: Electric dipole (a.u.)  =    0.000000   -0.000000   -0.000039
+siesta: Electric dipole (Debye) =    0.000000   -0.000000   -0.000098
+
+* Maximum dynamic memory allocated : Node    0 =     5 MB
+* Maximum dynamic memory allocated : Node    1 =     4 MB
+* Maximum dynamic memory allocated : Node    2 =     5 MB
+* Maximum dynamic memory allocated : Node    3 =     4 MB
+
+* Maximum memory occured during redistribXZ                   
+
+timer: CPU execution times:
+timer:  Routine       Calls   Time/call    Tot.time        %
+timer:  siesta            1      52.613      52.613   100.00
+timer:  Setup             1       0.809       0.809     1.54
+timer:  bands             1       0.000       0.000     0.00
+timer:  writewave         1       0.004       0.004     0.01
+timer:  KSV_init          1       0.000       0.000     0.00
+timer:  IterMD           18       2.876      51.775    98.41
+timer:  hsparse          18       0.001       0.010     0.02
+timer:  overlap          18       0.021       0.370     0.70
+timer:  IterSCF         120       0.346      41.501    78.88
+timer:  kinefsm          36       0.010       0.350     0.67
+timer:  nlefsm           36       0.059       2.138     4.06
+timer:  DHSCF           138       0.322      44.452    84.49
+timer:  DHSCF1            1       0.105       0.105     0.20
+timer:  DHSCF2           18       0.236       4.246     8.07
+timer:  REORD          1554       0.000       0.447     0.85
+timer:  POISON          156       0.037       5.788    11.00
+timer:  DHSCF3          138       0.265      36.590    69.55
+timer:  rhoofd          138       0.054       7.497    14.25
+timer:  cellXC          138       0.085      11.712    22.26
+timer:  vmat            138       0.053       7.368    14.00
+timer:  MolMec           36       0.000       0.000     0.00
+timer:  diagon          120       0.014       1.690     3.21
+timer:  r-eigvec        120       0.021       2.525     4.80
+timer:  r-buildHS       120       0.007       0.869     1.65
+timer:  rdiag           240       0.007       1.654     3.14
+timer:  rdiag1          240       0.000       0.088     0.17
+timer:  rdiag2          240       0.001       0.137     0.26
+timer:  rdiag3          240       0.005       1.298     2.47
+timer:  rdiag4          240       0.000       0.067     0.13
+timer:  r-buildD        120       0.000       0.007     0.01
+timer:  DHSCF4           18       0.189       3.394     6.45
+timer:  dfscf            18       0.172       3.103     5.90
+timer:  overfsm          18       0.001       0.012     0.02
+timer:  optical           1       0.003       0.003     0.01
+  
+
+elaps: ELAPSED times:
+elaps:  Routine       Calls   Time/call    Tot.time        %
+elaps:  siesta            1      13.208      13.208    99.99
+elaps:  Setup             1       0.225       0.225     1.70
+elaps:  bands             1       0.000       0.000     0.00
+elaps:  writewave         1       0.001       0.001     0.01
+elaps:  KSV_init          1       0.000       0.000     0.00
+elaps:  IterMD           18       0.721      12.976    98.24
+elaps:  hsparse          18       0.000       0.004     0.03
+elaps:  overlap          18       0.004       0.066     0.50
+elaps:  IterSCF         120       0.086      10.343    78.30
+elaps:  kinefsm          36       0.002       0.058     0.44
+elaps:  nlefsm           36       0.015       0.535     4.05
+elaps:  DHSCF           138       0.083      11.393    86.25
+elaps:  DHSCF1            1       0.026       0.026     0.20
+elaps:  DHSCF2           18       0.059       1.061     8.03
+elaps:  REORD          1554       0.000       0.099     0.75
+elaps:  POISON          156       0.009       1.433    10.85
+elaps:  DHSCF3          138       0.066       9.149    69.26
+elaps:  rhoofd          138       0.019       2.639    19.98
+elaps:  cellXC          138       0.021       2.943    22.28
+elaps:  vmat            138       0.013       1.843    13.95
+elaps:  MolMec           36       0.000       0.000     0.00
+elaps:  diagon          120       0.003       0.412     3.12
+elaps:  r-eigvec        120       0.005       0.617     4.67
+elaps:  r-buildHS       120       0.002       0.213     1.61
+elaps:  rdiag           240       0.002       0.404     3.06
+elaps:  rdiag1          240       0.000       0.017     0.13
+elaps:  rdiag2          240       0.000       0.039     0.30
+elaps:  rdiag3          240       0.001       0.320     2.42
+elaps:  rdiag4          240       0.000       0.014     0.11
+elaps:  r-buildD        120       0.000       0.002     0.02
+elaps:  DHSCF4           18       0.062       1.116     8.45
+elaps:  dfscf            18       0.057       1.019     7.71
+elaps:  overfsm          18       0.000       0.001     0.01
+elaps:  optical           1       0.000       0.000     0.00
+  
+>> End of run:  22-MAR-2013  17:25:43
