@@ -1,11 +1,8 @@
 EMBSIESTA, Sep 30, 2014
 
-This code is the computational embedding electrodynamics, i.e., combinding electrodynmiacs
-with quantum mechanics to study nanoplasmonics and nanopolaritonics.  The code was developed
-by Yi Gao and Daniel Neuhauser at UCLA.
+This code is the computational embedding electrodynamics, i.e., combinding electrodynmiacs with quantum mechanics to study nanoplasmonics and nanopolaritonics.  The code was developed by Yi Gao and Daniel Neuhauser at UCLA.
 
 /Src: The folder for original DFT source code, i.e., Siesta.
-/Src_hybrid: The folder for TDDFT, near-field, and hybrid embedding electrodynamics, including
-original Siesta code.
+/Src_hybrid: The folder for TDDFT, near-field, and hybrid embedding electrodynamics, including original Siesta code.
 
 Please contact yigao1983@gmail.com or gaoy@chem.ucla.edu for any questions.
