@@ -1,25 +1,11 @@
-SIESTA-3.2, March 24, 2011
+EMBSIESTA, Sep 30, 2014
 
-www.uam.es/siesta
+This code is the computational embedding electrodynamics, i.e., combinding electrodynmiacs
+with quantum mechanics to study nanoplasmonics and nanopolaritonics.  The code was developed
+by Yi Gao and Daniel Neuhauser at UCLA.
 
-In the Docs/ directory: 
+/Src: The folder for original DFT source code, i.e., Siesta.
+/Src_hybrid: The folder for TDDFT, near-field, and hybrid embedding electrodynamics, including
+original Siesta code.
 
-* Release Notes
-* Detailed list of Changes to the code.
-* LaTeX source for the manual (in siesta.tex)
-
-The code itself can be found under Src/
-Examples and other tutorial material in Tests/, Tutorials/, and Examples/
-
-Utilities under Util/
-
-The pseudopotential generation code and related materials can be found
-under Pseudo/.
-
-Please see the manual for compilation and other instructions.
-
-Please be sure to follow the terms and conditions stated in SIESTA_LICENCE.
-
-For bug reports, and other code suggestions, please follow the guidelines
-in the file Docs/REPORTING_BUGS
-
+Please contact yigao1983@gmail.com or gaoy@chem.ucla.edu for any questions.
